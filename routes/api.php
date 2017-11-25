@@ -13,12 +13,8 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
-Route::group(['middleware' => ['cors']], function () {
-
+Route::middleware(['cors', 'api', 'JWTAuth'])->group(function () {//
     Route::get('/menu', 'MenuController@Index');
 
     Route::get('/interview', 'InterviewController@Index');
@@ -27,16 +23,25 @@ Route::group(['middleware' => ['cors']], function () {
     Route::patch('interview', 'InterviewController@Update');
     Route::delete('/interview/{id}', 'InterviewController@Delete');
 
-    Route::get('/department','DepartmentController@Index');
-    Route::get('/department/{id}','DepartmentController@Show');
-    Route::post('/department','DepartmentController@Add');
-    Route::patch('/department','DepartmentController@Update');
-    Route::delete('/department/{id}','DepartmentController@Delete');
+    Route::get('/department', 'DepartmentController@Index');
+    Route::get('/department/{id}', 'DepartmentController@Show');
+    Route::post('/department', 'DepartmentController@Add');
+    Route::patch('/department', 'DepartmentController@Update');
+    Route::delete('/department/{id}', 'DepartmentController@Delete');
 
-    Route::get('/user','UserController@Index');
-    Route::get('/user/{id}','UserController@Show');
-    Route::post('/user','UserController@Add');
-    Route::patch('/user','UserController@Update');
-    Route::delete('/user','UserController@Delete');
-    Route::post('//user/resetpassword','UserController@ResetPassword');
+    Route::get('/user', 'UserController@Index');
+    Route::get('/user/{id}', 'UserController@Show');
+    Route::post('/user', 'UserController@Add');
+    Route::patch('/user', 'UserController@Update');
+    Route::delete('/user', 'UserController@Delete');
+    Route::post('/user/resetpassword', 'UserController@ResetPassword');
+
+//    Route::post('/login', 'AuthController@Login');
+
+
 });
+
+Route::middleware(['cors'])->group(function () {//
+    Route::post('/auth/login', 'AuthController@Login');
+});
+

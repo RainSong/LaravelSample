@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->integer('department_id')->nullable(true)->default(0)->comment('所属部门');
             $table->string('user_name',30)->nullable(false)->comment('用户名');
-            $table->string('password',50)->nullable(false)->comment('密码');
+            $table->string('password',100)->nullable(false)->comment('密码');
             $table->string('name',30)->nulable(false)->comment('姓名');
             $table->integer('sex')->nullable(false)->default(1)->comment(1);
             $table->dateTime('brithday')->nullable(true)->comment('生日');
