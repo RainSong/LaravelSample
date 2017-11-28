@@ -16,6 +16,10 @@ class CreatePermissionsTable extends Migration
         //
         Schema::create('permissions',function (Blueprint $table){
             $table->increments('id');
+            $table->integer('parent_id')->notnull(true)->default(0)->comment('父级权限ID');
+            $table->string('name')->notnull(true)->comment('权限名');
+            $table->integer('sort')->notnull(true)->default(0)->comment('排序');
+            $table->integer('state')->notnull(true)->default(0)->comment('状态 0 正常 1 已删除');
             $table->timestamps();
         });
     }
