@@ -36,8 +36,11 @@ Route::middleware(['cors', 'api', 'JWTAuth'])->group(function () {//
     Route::delete('/user', 'UserController@Delete');
     Route::post('/user/resetpassword', 'UserController@ResetPassword');
 
-//    Route::post('/login', 'AuthController@Login');
-
+    Route::get('/role', 'RoleController@Index');
+    Route::get('/role/{id}', 'RoleController@Show');
+    Route::post('/role', 'RoleController@Add');
+    Route::patch('/role', 'RoleController@Update');
+    Route::delete('/role', 'RoleController@Delete');
 
 });
 

@@ -17,7 +17,7 @@ class UsersTableSeeder extends Seeder
             [
                 'user_name'=>'znl',
                 'sex'=>'0',
-                'password'=>md5('1234'),
+                'password'=>password_hash('1234',PASSWORD_DEFAULT),
                 'name'=>'张娜拉',
                 'phone'=>'17812345678',
                 'email'=>'17812345678@yahoo.com',
@@ -28,7 +28,7 @@ class UsersTableSeeder extends Seeder
             [
                 'user_name'=>'wbq',
                 'sex'=>'1',
-                'password'=>md5('1234'),
+                'password'=>password_hash('1234',PASSWORD_DEFAULT),
                 'name'=>'王宝强',
                 'phone'=>'17912345678',
                 'email'=>'17912345678@yahoo.com',
@@ -39,7 +39,7 @@ class UsersTableSeeder extends Seeder
             [
                 'user_name'=>'sjlyhx',
                 'sex'=>'0',
-                'password'=>md5('1234'),
+                'password'=>password_hash('1234',PASSWORD_DEFAULT),
                 'name'=>'斯嘉丽约翰逊',
                 'phone'=>'18012345678',
                 'email'=>'18012345678@yahoo.com',
@@ -50,7 +50,7 @@ class UsersTableSeeder extends Seeder
             [
                 'user_name'=>'zgr',
                 'sex'=>'1',
-                'password'=>md5('1234'),
+                'password'=>password_hash('1234',PASSWORD_DEFAULT),
                 'name'=>'张国荣',
                 'phone'=>'18112345678',
                 'email'=>'18112345678@gmail.com',
@@ -61,7 +61,7 @@ class UsersTableSeeder extends Seeder
             [
                 'user_name'=>'myf',
                 'sex'=>'0',
-                'password'=>md5('1234'),
+                'password'=>password_hash('1234',PASSWORD_DEFAULT),
                 'name'=>'梅艳芳',
                 'phone'=>'18212345678',
                 'email'=>'18212345678@qq.com',
@@ -73,7 +73,7 @@ class UsersTableSeeder extends Seeder
             [
                 'user_name'=>'cl',
                 'sex'=>'1',
-                'password'=>md5('1234'),
+                'password'=>password_hash('1234',PASSWORD_DEFAULT),
                 'name'=>'成龙',
                 'phone'=>'18312345678',
                 'email'=>'18312345678@163.com',

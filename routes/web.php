@@ -15,6 +15,7 @@
 //header('Access-Control-Allow-Credentials: true');
 //
 Route::get('/', function () {
+    return response()->redirectTo('index.html');
     return view('welcome');
 });
 

@@ -24,7 +24,7 @@ class UserController extends Controller
             ->leftJoin('departments as p1', 'u.department_id', '=', 'p1.id')
             ->leftJoin('departments as p2', 'p1.parent_id', '=', 'p2.id')
             ->leftJoin('departments as p3', 'p2.parent_id', '=', 'p3.id')
-            ->where('u.state', '=', '0');
+            ->where('u.state', '=', 0);
 
         if (!empty($key_word)) {
             $query->where(function ($q) use ($key_word) {
@@ -67,6 +67,10 @@ class UserController extends Controller
             $users = $query->offset(($currentPage - 1) * $pageSize)
                 ->limit($pageSize)
                 ->get();
+//            $sql = $query->offset(($currentPage - 1) * $pageSize)
+//                ->limit($pageSize)
+//                ->toSql();
+//            \Log::info($sql);
             return response()->json(['status' => true, 'total' => $total, 'users' => $users]);
         } catch (\Exception $ex) {
             \Log::error($ex);
