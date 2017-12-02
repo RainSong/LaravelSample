@@ -15,6 +15,8 @@ class CareateUserRolesTable extends Migration
     {
         Schema::create('user_roles', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->nullable(false)->comment('用户ID');
+            $table->integer('role_id')->nullable(false)->comment('角色ID');
             $table->timestamps();
         });
     }

@@ -48,6 +48,12 @@ Route::middleware(['cors', 'api', 'JWTAuth'])->group(function () {//
     Route::patch('/permissions', 'PermissionsController@Update');
     Route::delete('/permissions', 'PermissionsController@Delete');
 
+    Route::get('/user/role/{id}', 'UserRoleController@Index');
+    Route::post('/user/role', 'UserRoleController@Update');
+
+    Route::get('/role/permissions/{id}','RolePermissions@Index');
+    Route::post('/role/permissions','RolePermissions@Update');
+
 });
 
 Route::middleware(['cors'])->group(function () {//
