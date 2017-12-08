@@ -10,7 +10,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Menu extends Model
+class Module extends Model
 {
-    protected $table ='menus';
+    protected $table ='modules';
 }

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class MenusTableSeeder extends Seeder
+class ModulesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class MenusTableSeeder extends Seeder
     public function run()
     {
         //
-        $employee = new App\Models\Menu();
+        $employee = new App\Models\Module();
         $employee -> level = 1;
         $employee -> parent_id = 0;
         $employee -> path = '/Employee/Interview';
@@ -24,7 +24,7 @@ class MenusTableSeeder extends Seeder
 
         $employee->save();
 
-        $interview = new App\Models\Menu();
+        $interview = new App\Models\Module();
         $interview -> level = 2;
         $interview -> parent_id = $employee -> id;
         $interview -> path = '/Employee/Interview';
@@ -36,7 +36,7 @@ class MenusTableSeeder extends Seeder
 
         $interview -> save();
 
-        $system = new App\Models\Menu();
+        $system = new App\Models\Module();
         $system -> level = 1;
         $system -> parent_id = 0;
         $system -> path = '/System/Menu';
@@ -48,7 +48,7 @@ class MenusTableSeeder extends Seeder
 
         $system -> save();
 
-        $menu = new App\Models\Menu();
+        $menu = new App\Models\Module();
         $menu -> level = 2;
         $menu -> parent_id = $system -> id;
         $menu -> path = '/System/Menu';
