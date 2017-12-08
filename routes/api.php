@@ -51,8 +51,8 @@ Route::middleware(['cors', 'api', 'JWTAuth'])->group(function () {//
     Route::get('/user/role/{id}', 'UserRoleController@Index');
     Route::post('/user/role', 'UserRoleController@Update');
 
-    Route::get('/role/permissions/{id}','RolePermissions@Index');
-    Route::post('/role/permissions','RolePermissions@Update');
+    Route::get('/role/permissions/{id}','RolePermissionsController@Index');
+    Route::post('/role/permissions','RolePermissionsController@Update'); 
 
 });
 

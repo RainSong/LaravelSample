@@ -15,6 +15,8 @@ class CreateRolePermissionsTable extends Migration
     {
         Schema::create('role_permissions', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('role_id')->nullalbe(false)->comment('角色ID');
+            $table->integer('permissions_id')->nullable(false)->comment('权限ID');
             $table->timestamps();
         });
     }
