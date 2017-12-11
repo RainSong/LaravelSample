@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 
 Route::middleware(['cors', 'api', 'JWTAuth'])->group(function () {//
-    Route::get('/menu', 'MenuController@Index');
+    Route::get('/module', 'ModuleController@Index');
 
     Route::get('/interview', 'InterviewController@Index');
     Route::get('/interview/{id}', 'InterviewController@Show');
@@ -53,6 +53,9 @@ Route::middleware(['cors', 'api', 'JWTAuth'])->group(function () {//
 
     Route::get('/role/permissions/{id}','RolePermissionsController@Index');
     Route::post('/role/permissions','RolePermissionsController@Update'); 
+
+    Route::get('/permissions/module/{id}','PermissionsModuleController@Index');
+    Route::post('/permissions/module','PermissionsModuleController@Update'); 
 
 });
 
