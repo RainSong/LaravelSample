@@ -16,6 +16,10 @@ use Illuminate\Http\Request;
 
 Route::middleware(['cors', 'api', 'JWTAuth'])->group(function () {//
     Route::get('/module', 'ModuleController@Index');
+    Route::get('/module/{id}','ModuleController@Show');
+    Route::post('/module','ModuleController@Add');
+    Route::patch('/module','ModuleController@Update');
+    Route::delete('/module','ModuleController@Delete');
 
     Route::get('/interview', 'InterviewController@Index');
     Route::get('/interview/{id}', 'InterviewController@Show');

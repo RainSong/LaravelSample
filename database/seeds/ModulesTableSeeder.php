@@ -11,6 +11,7 @@ class ModulesTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('modules')->truncate();
         //
         $employee = new App\Models\Module();
         $employee -> level = 1;
