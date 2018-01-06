@@ -15,6 +15,9 @@ use Illuminate\Http\Request;
 
 
 Route::middleware(['cors', 'api', 'JWTAuth'])->group(function () {//
+
+    Route::get('/menu','MenuController@Index');
+
     Route::get('/module', 'ModuleController@Index');
     Route::get('/module/{id}','ModuleController@Show');
     Route::post('/module','ModuleController@Add');
