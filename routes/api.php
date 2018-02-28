@@ -62,8 +62,13 @@ Route::middleware(['cors', 'api', 'JWTAuth'])->group(function () {//
     Route::post('/role/permissions','RolePermissionsController@Update'); 
 
     Route::get('/permissions/module/{id}','PermissionsModuleController@Index');
-    Route::post('/permissions/module','PermissionsModuleController@Update'); 
+    Route::post('/permissions/module','PermissionsModuleController@Update');
 
+    Route::get('/attendance','AttendanceController@Index');
+    Route::get('/attendance/{id}','AttendanceController@Show');
+    Route::post('/attendance','AttendanceController@Add');
+    Route::patch('/attendance','AttendanceController@Update');
+    Route::delete('/attendance', 'AttendanceController@Delete');
 });
 
 Route::middleware(['cors'])->group(function () {//

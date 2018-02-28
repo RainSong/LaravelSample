@@ -40,7 +40,7 @@ class AuthController extends Controller
                 return response()->json(['status' => false, 'title' => '用户状态异常', 'message'=>'用户状态异常，无法登陆']);
             }
             $token = $this->guard()->fromUser($user);
-            return response()->json(['status' => true, 'token' => $token]);
+            return response()->json(['status' => true, 'token' => $token,'uid'=>$user->id]);
         } catch (\Exception $ex) {
             \Log::error($ex);
             return response()->json(['status' => false, 'title' => '登陆失败', '系统错误，登陆失败']);
